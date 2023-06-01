@@ -2,6 +2,7 @@ package com.example.testproject;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -14,18 +15,34 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
 
-    private Scene startS, GameScene;
+    private Scene GameScene;
     private Pane p;
     String name;
 
-    private int w= 500, l=500;
     @Override
     public void start(Stage stage) throws IOException {
-        VBox blob= new VBox();
+
+        // creating scene and allowing it to be resizable
+        Group root = new Group();
+        Scene scene = new Scene(root);
+
+        stage.setTitle("Oregon Trail");
+        stage.setWidth(800);
+        stage.setHeight(600);
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
+
+
+
+        /*
+        VBox box = new VBox();
         TextField nameInput= new TextField("Enter Name");
-        Button start2= new Button("Start");
-        blob.getChildren().addAll(nameInput, start2);
-        startS= new Scene(blob, w, l);
+        Button start2 = new Button("Start");
+        box.getChildren().addAll(nameInput, start2);
+        int w = 1000;
+        int l = 500;
+        Scene startS = new Scene(box, w, l);
 
         start2.setOnAction( e -> {
             stage.setScene(GameScene);
@@ -33,13 +50,13 @@ public class HelloApplication extends Application {
         });
 
         p= new Pane();
-        stage.setTitle("Oregon Trail!");
+        stage.setTitle("Oregon Trail");
 
         Button start= new Button("Tell me More Information");
         start.setMaxWidth(200);
 
         start.setLayoutX(50);
-        start.setLayoutY(50);
+        start.setLayoutY(100);
 
         Label string= new Label("I like turtles");
         string.setMaxWidth(200);
@@ -49,7 +66,7 @@ public class HelloApplication extends Application {
         string.setLayoutY(300);
 
         start.setOnAction(e->{
-            string.setText("You have complteted the thingyYou have complteted the thingy\nYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingyYou have complteted the thingy");
+            string.setText("yoyo");
             p.getChildren().add(string);
         });
 
@@ -60,6 +77,8 @@ public class HelloApplication extends Application {
 
         stage.setScene(startS);
         stage.show();
+
+         */
     }
 
     public static void main(String[] args) {
